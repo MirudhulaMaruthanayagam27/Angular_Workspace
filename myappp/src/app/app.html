@@ -1,0 +1,16 @@
+<h1>Welcome to My App</h1>
+
+<!-- Add this where you want the products to show -->
+ <div style="text-align:center">
+  <h1>Welcome to My Store 🛍️</h1>
+  <app-products></app-products>  <!-- Products component now used -->
+</div>
+<app-products></app-products>
+
+<button (click)="toggleChat()">Toggle ChatCard</button>
+<button (click)="changeUsername()">Change Username</button>
+<button (click)="changeNotification()">Change Notification</button>
+
+<app-chat-card *ngIf="showChat" [username]="username">
+  <p #notification>{{notification}}</p>
+</app-chat-card>

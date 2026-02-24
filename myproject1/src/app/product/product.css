@@ -1,0 +1,11 @@
+.data{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* auto row/col */
+  gap: 30px; /* space between cards */
+  padding: 20px; 
+  background-color: rgb(131, 134, 215);
+}
+h1{
+  display: block;
+  background-color: yellowgreen;
+}
