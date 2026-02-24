@@ -1,0 +1,46 @@
+<h1>Form1-Templateform</h1>
+<form #myform="ngForm" (ngSubmit)="onSubmit(myform)">
+  <!--Name-->
+<div>
+  <label>Name:</label>
+  <input type="text"
+  name="name" placeholder="Enter name"
+  ngModel required
+  pattern="^[A-Z]+$"
+  #fn="ngModel">
+  <p *ngIf="fn.invalid && fn.touched">
+    Enter Correct name
+  </p>
+  </div>
+  <!--Email-->
+<div>
+  <label>Email:</label>
+  <input type="text"
+  name="email" placeholder="Enter email"
+  ngModel required
+  #e="ngModel">
+  <p *ngIf="e.invalid && e.touched">
+    Enter Correct Email
+  </p>
+  </div>
+<!--Group data-->
+<div ngModelGroup="address">
+
+  <div>
+    <label>City:</label>
+    <input type="text" name="city" ngModel>
+  </div>
+  <div>
+    <label>Street</label>
+    <input type="text" name="street" ngModel>
+  </div>
+  <div>
+    <label>Pincode</label>
+    <input  type="text" name="pincode" ngModel>
+  </div>
+</div>
+<br>
+<button type="submit" [disabled]="myform.invalid">Submit here</button>
+  
+</form>
+
