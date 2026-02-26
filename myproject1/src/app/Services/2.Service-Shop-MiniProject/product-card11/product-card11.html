@@ -1,0 +1,7 @@
+<h1 class="head">Product-card</h1>
+<div class="container">
+  <div class="div1" *ngFor="let p of products">
+  <h1>{{p.name}}</h1>-{{p.price}}
+  <button class="btn" (click)="add(p)">Add to Card</button>
+</div>
+</div>
