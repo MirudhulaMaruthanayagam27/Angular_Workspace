@@ -1,0 +1,7 @@
+<div>
+  <img [src]="image1" alt="image 1">
+  <h2>Username:Guest</h2>
+  <button [disabled]="isFollowed" (click)="followuser()">
+    {{isFollowed ? 'Following' : 'Follow'}}
+  </button>
+</div>
