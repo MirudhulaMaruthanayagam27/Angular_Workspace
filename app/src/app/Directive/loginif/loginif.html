@@ -1,0 +1,7 @@
+<p>loginif works!</p>
+<div *ngIf="isloggedin; else login">
+  Welcome User
+</div>
+<ng-template #login>
+  <button (click)="login1()">Login</button>
+</ng-template>
