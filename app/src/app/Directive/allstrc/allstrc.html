@@ -1,6 +1,7 @@
 <h1>Structural Directive</h1>
 <div *ngIf="islogin ; else loggingout">
   <button (click)="logout()">Logout</button>
+  <button (click)="adduser()">Adduser</button>
 </div>
 <ng-template #loggingout>
   <button (click)="login()">Login</button>
@@ -9,13 +10,16 @@
 <div *ngIf="users.length>0 ; else nouser">
   <table class="usertab">
     <tr>
+      <th>S.No</th>
       <th>Name</th>
       <th>Age</th>
       <th>City</th>
       <th>Role</th>
+      <th>Add/remove</th>
     </tr>
 
-    <tr *ngFor="let u of users">
+    <tr *ngFor="let u of users; let i=index">
+      <td>{{i+1}}</td>
       <td>{{u.name}}</td>
       <td>{{ u.age }}</td>
       <td>{{ u.city }}</td>
@@ -26,6 +30,9 @@
         <span *ngSwitchCase="'manager'" class="role-manager">Manager</span>
         <span *ngSwitchDefault class="no-role">Unknown/null</span>
       </span>
+      </td>
+      <td>
+        <button (click)="removeuser(i)">RemoveUser</button>
       </td>
     </tr>
   </table>

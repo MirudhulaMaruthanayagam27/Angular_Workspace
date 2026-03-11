@@ -21,4 +21,15 @@ export class Allstrc {
   logout(){
     this.islogin=false;
   }
+
+  adduser() {
+    const newUser = { name: 'David', age: 26, city: 'Mumbai', role: 'user' };
+    this.users.push(newUser);
+    this.users.sort((a, b) => a.name.localeCompare(b.name));
+  }
+
+  removeuser(index: number) {
+    this.users.splice(index, 1);
+    this.users.sort((a, b) => a.name.localeCompare(b.name));
+  }
 }
