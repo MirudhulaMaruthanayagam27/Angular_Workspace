@@ -1,0 +1,35 @@
+<h1>Structural Directive</h1>
+<div *ngIf="islogin ; else loggingout">
+  <button (click)="logout()">Logout</button>
+</div>
+<ng-template #loggingout>
+  <button (click)="login()">Login</button>
+</ng-template>
+
+<div *ngIf="users.length>0 ; else nouser">
+  <table class="usertab">
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>City</th>
+      <th>Role</th>
+    </tr>
+
+    <tr *ngFor="let u of users">
+      <td>{{u.name}}</td>
+      <td>{{ u.age }}</td>
+      <td>{{ u.city }}</td>
+      <td>
+      <span [ngSwitch]="u.role">
+        <span *ngSwitchCase="'admin'" class="role-admin">Admin</span>
+        <span *ngSwitchCase="'user'" class="role-user">User</span>
+        <span *ngSwitchCase="'manager'" class="role-manager">Manager</span>
+        <span *ngSwitchDefault class="no-role">Unknown/null</span>
+      </span>
+      </td>
+    </tr>
+  </table>
+</div>
+<ng-template #nouser>
+  <p>No users available. Add users to see the table.</p>
+</ng-template>

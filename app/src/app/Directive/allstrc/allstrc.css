@@ -1,0 +1,14 @@
+.usertab {
+  border-collapse: collapse; /* join borders */
+  width: 100%;
+}
+
+.usertab th, .usertab td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+
+.usertab th {
+  background-color: #d32727;
+}
