@@ -1,0 +1,8 @@
+<p>productlist works!</p>
+<ul>
+  <li *ngFor="let p of products">
+    {{p}}
+  </li>
+</ul>
+<input [(ngModel)]="newpro" >
+<button (click)="addnewpro()">Add Product</button>
