@@ -1,2 +1,29 @@
-<h2>Welcome to Home Page</h2>
-<p>This is the home page of our Angular site.</p>
+<h2>Filters</h2>
+
+<!-- Color -->
+<label><input type="checkbox" (change)="toggleColor('red', $event)"> Red</label>
+<label><input type="checkbox" (change)="toggleColor('blue', $event)"> Blue</label>
+
+<!-- Size -->
+<label><input type="checkbox" (change)="toggleSize('m', $event)"> M</label>
+<label><input type="checkbox" (change)="toggleSize('l', $event)"> L</label>
+
+<!-- Price -->
+<input type="number" [(ngModel)]="minPrice" placeholder="Min Price">
+<input type="number" [(ngModel)]="maxPrice" placeholder="Max Price">
+
+<h1>Products</h1>
+
+<div *ngFor="let product of products"
+     style="border:1px solid gray; margin:5px; padding:10px;">
+
+  <h3>{{ product.name }}</h3>
+  <p>Price: {{ product.price }}</p>
+
+  
+  <a [routerLink]="['/product', product.id]"
+     [queryParams]="getParams()">
+     View Details
+  </a>
+
+</div>
