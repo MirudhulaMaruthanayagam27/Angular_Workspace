@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   selector: 'app-home1',
   imports: [CommonModule, FormsModule],
   templateUrl: './home1.html',
-  styleUrls: ['./home1.css'],  // corrected 'styleUrl' → 'styleUrls'
+  styleUrl: './home1.css',  
 })
 export class Home1 {
   products2 = Array.from({ length: 30 }, (_, i) => ({
