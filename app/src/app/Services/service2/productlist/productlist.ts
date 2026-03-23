@@ -1,9 +1,10 @@
 import { Component,OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { Shareservice } from '../shareservice';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-productlist',
-  imports: [FormsModule],
+  imports: [CommonModule,FormsModule],
   templateUrl: './productlist.html',
   styleUrl: './productlist.css',
 })
@@ -23,10 +24,5 @@ export class Productlist implements OnInit {
       this.products=this.shareservice.getproducts();
       this.newpro='';
   }
-
   }
-
-
-
-
 }

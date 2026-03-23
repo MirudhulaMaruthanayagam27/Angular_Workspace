@@ -1,1 +1,5 @@
-<p>httpsg1 works!</p>
+<div *ngFor="let p of products">
+  <div *ngFor="let key of objectKeys(p)">
+    <strong>{{key}}: {{p[key]}}</strong>
+  </div>
+</div>

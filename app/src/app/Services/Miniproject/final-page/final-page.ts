@@ -17,8 +17,7 @@ export class FinalPage implements OnInit {
   ngOnInit(){
     this.finalp.cart$.subscribe(data=>{
       this.items=data;
-    }
-    )
+    })
   }
   remove(index:number){
     this.finalp.removefromcart(index);
