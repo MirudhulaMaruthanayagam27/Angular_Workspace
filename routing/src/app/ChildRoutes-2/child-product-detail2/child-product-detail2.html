@@ -1,0 +1,13 @@
+<h3>Product Detail</h3>
+
+<p><b>ID:</b> {{ id }}</p>
+<p><b>Name:</b> {{ product?.name }}</p>
+<p><b>Price:</b> ₹{{ product?.price }}</p>
+<p>{{ product?.image }}</p>
+
+<button (click)="reviews()">Reviews</button>
+<button (click)="goback()">Back</button>
+
+<hr>
+
+<router-outlet></router-outlet>
