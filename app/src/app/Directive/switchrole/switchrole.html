@@ -1,0 +1,15 @@
+<p>Switch-Role works!</p>
+<div [ngSwitch]="role">
+  <div [ngSwitch]="role">
+  <div *ngSwitchCase="'admin'">Admin Dashboard</div>
+  <div *ngSwitchCase="'manager'">Manager Dashboard</div>
+  <div *ngSwitchCase="'user'">User Dashboard</div>
+  <div *ngSwitchDefault>Role Unknown</div>
+</div>
+
+<div [ngSwitch]="orderStatus">
+  <span *ngSwitchCase="'pending'">Pending</span>
+  <span *ngSwitchCase="'shipped'">Shipped</span>
+  <span *ngSwitchCase="'delivered'">Delivered</span>
+  <span *ngSwitchDefault>Unknown Status</span>
+</div>

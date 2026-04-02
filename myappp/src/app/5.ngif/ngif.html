@@ -1,0 +1,29 @@
+<p>ngif works!</p>
+<button (click)="toggleLoading()">Toggle Loading</button>
+
+<!--Loading-->
+<div *ngIf="isLoading; else content">
+  <p>Loading Products...</p>
+</div>
+
+<ng-template #content>
+
+  <!--ProductCheck -->
+  <div *ngIf="product && product.stock > 0; else outOfStock">
+    <h2>{{ product.name }}</h2>
+    <p>Price: ₹{{ product.price }}</p>
+    <p>Stock: {{ product.stock }}</p>
+  </div>
+
+</ng-template>
+
+<!--Else Block -->
+<ng-template #outOfStock>
+  <h3>Out of Stock ❌</h3>
+</ng-template>
+
+<!--Role Based UI -->
+<div *ngIf="userRole === 'admin'">
+  <button>Edit Product</button>
+  <button>Delete Product</button>
+</div>

@@ -1,0 +1,53 @@
+<h2>Reactive Contact Form</h2>
+
+<form [formGroup]="contactForm" (ngSubmit)="submit()" style="max-width:500px; margin:auto; font-family:Arial">
+
+  <!-- Name -->
+  <div style="margin-bottom:15px;">
+    <label>Name:</label><br>
+    <input type="text" formControlName="name"
+           placeholder="Enter Name"
+           [style.borderColor]="contactForm.get('name')?.invalid && contactForm.get('name')?.touched ? 'red' : '#ccc'"
+           style="padding:5px; width:100%;">
+    <div *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.invalid" style="color:red; font-size:12px">
+      Name is required
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Emails -->
+  <div formArrayName="emails" style="margin-bottom:15px;">
+    <label>Emails:</label><br>
+    <div *ngFor="let email of emails.controls; let i=index" style="margin-bottom:10px; display:flex; align-items:center;">
+      <input [formControlName]="i"
+             placeholder="Email {{i+1}}"
+             [style.borderColor]="email.invalid && email.touched ? 'red' : '#ccc'"
+             style="padding:5px; flex:1;">
+      <!-- Remove icon only if more than 1 -->
+      <span *ngIf="emails.length > 1" style="cursor:pointer; margin-left:5px;" (click)="removeEmail(i)">🗑️</span>
+    </div>
+    <button type="button" (click)="addEmail()" style="margin-top:5px; cursor:pointer;">➕ Add Email</button>
+  </div>
+
+  <hr>
+
+  <!-- Phones -->
+  <div formArrayName="phones" style="margin-bottom:15px;">
+    <label>Phones:</label><br>
+    <div *ngFor="let phone of phones.controls; let i=index" style="margin-bottom:10px; display:flex; align-items:center;">
+      <input [formControlName]="i"
+             placeholder="Phone {{i+1}}"
+             [style.borderColor]="phone.invalid && phone.touched ? 'red' : '#ccc'"
+             style="padding:5px; flex:1;">
+      <!-- Remove icon only if more than 1 -->
+      <span *ngIf="phones.length > 1" style="cursor:pointer; margin-left:5px;" (click)="removePhone(i)">🗑️</span>
+    </div>
+    <button type="button" (click)="addPhone()" style="margin-top:5px; cursor:pointer;">➕ Add Phone</button>
+  </div>
+
+  <hr>
+
+  <button type="submit" [disabled]="contactForm.invalid" style="padding:10px 20px; cursor:pointer;">Submit</button>
+
+</form>

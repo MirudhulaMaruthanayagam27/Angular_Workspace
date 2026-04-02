@@ -1,0 +1,9 @@
+<h1 class="plst">Product-list after adding to the card</h1>
+<div class="container">
+  <div class="div1" *ngFor="let p of items ;let i=index">
+  <h1>{{p.name}} | {{p.price}}</h1>
+  <button class="btn" (click)="remove(i)">Remove from card</button>
+</div>
+
+</div>
+

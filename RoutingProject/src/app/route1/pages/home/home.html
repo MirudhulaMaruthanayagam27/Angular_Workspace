@@ -1,0 +1,8 @@
+<h2>Home</h2>
+<h2>Welcome</h2>
+
+<button *ngIf="!hasUser" routerLink="/signup">Signup</button>
+
+<button *ngIf="hasUser" routerLink="/login">Login</button>
+
+<button routerLink="/products">Products</button>

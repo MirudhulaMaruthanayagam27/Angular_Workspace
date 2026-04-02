@@ -1,0 +1,10 @@
+<h1>ProductList</h1>
+
+<div *ngFor="let p of products">
+  <h3>{{p.name}}</h3>
+  <p>Rs. {{p.price}}</p>
+
+  <button (click)="openproduct(p.id)">View</button>
+</div>
+
+<router-outlet></router-outlet>

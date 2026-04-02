@@ -1,0 +1,9 @@
+<h2>Dashboard</h2>
+<nav>
+  <button *ngIf="currentUser.role==='user'" routerLink="cart">Cart</button>
+  <button *ngIf="currentUser.role==='user'" routerLink="wishlist">Wishlist</button>
+  <button *ngIf="currentUser.role==='admin'" routerLink="user-list">User List</button>
+  <button (click)="logout()">Logout</button>
+</nav>
+<hr>
+<router-outlet></router-outlet>

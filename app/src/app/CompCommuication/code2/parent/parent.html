@@ -1,0 +1,7 @@
+<p>parent works!</p>
+<app-child
+*ngFor="let p of products"
+[name]="p.name"
+[price]="p.price"
+[stock]="p.Stock">
+</app-child>

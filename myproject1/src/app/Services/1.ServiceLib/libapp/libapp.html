@@ -1,0 +1,7 @@
+<p>libapp works!</p>
+<h2>Library Books-Add</h2>
+<ul>
+  <li *ngFor="let b of books">{{b}}</li>
+</ul>
+<input [(ngModel)]="newBook" placeholder="addbook">
+<button (click)="addBook()">Add</button>
