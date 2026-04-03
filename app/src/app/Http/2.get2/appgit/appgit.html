@@ -1,0 +1,15 @@
+<p>appgit works!</p>
+<h1>GitHub Repositories</h1>
+    <input [(ngModel)]="username" placeholder="Enter GitHub username" />
+    <button (click)="fetchRepos()">Get Repos</button>
+
+    <h2>Simple GET (Body Only)</h2>
+    <ul>
+      <li *ngFor="let repo of repos">{{ repo.name }} - {{ repo.description }}</li>
+    </ul>
+
+    <h2>Full Response Example (Status + Headers)</h2>
+    <pre>{{ fullResponse | json }}</pre>
+
+    <h2>Events Example (Progress)</h2>
+    <p *ngIf="loading">Loading: {{ progress }}%</p>

@@ -1,0 +1,25 @@
+<h2>Filters</h2>
+
+<h3>Colors</h3>
+<label *ngFor="let c of ['red','blue','green','yellow']">
+  <input type="checkbox" (change)="toggleColor2(c,$event)"> {{c}}
+</label>
+
+<h3>Sizes</h3>
+<label *ngFor="let s of ['S','M','L']">
+  <input type="checkbox" (change)="toggleSize2(s,$event)"> {{s}}
+</label>  
+
+<h3>Price</h3>
+Min: <input type="number" [(ngModel)]="minPrice2">
+Max: <input type="number" [(ngModel)]="maxPrice2">
+
+<button (click)="applyFilters2()">Apply Filter</button>
+
+<h2>Products</h2>
+<ul>
+  <li *ngFor="let p of filteredProducts2">
+    {{p.name}} - {{p.color}} - {{p.size}} - ₹{{p.price}}
+    <button (click)="goToProduct2(p)">View</button>
+  </li>
+</ul>

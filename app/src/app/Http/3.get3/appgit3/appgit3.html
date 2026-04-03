@@ -1,0 +1,8 @@
+<p>appgit3 works!</p>
+<div *ngFor="let p of products">
+  <h1>{{p.name}}</h1>
+  <p>Price :Rs. {{p.price}}</p>
+  <p>Stock: {{p.stock}}</p>
+  <p *ngIf="p.isAvailable">Available</p>
+  <p *ngIf="!p.isAvailable">Not</p>
+</div>

@@ -1,0 +1,15 @@
+<p>Post1-Service</p>
+
+<form (ngSubmit)="Onsubmit()">
+
+  <input type="text" [(ngModel)]="user.name" name="name"  placeholder="enter  name">
+  <br>
+  <input tyep="text" [(ngModel)]="user.email" email="email" placeholder="enter email">
+  <br>
+  <input type="password" [(ngModel)]="user.password" pass="password"  placeholder="enter password">
+
+  <button type="submit">Regiter</button>
+
+</form>
+
+<p>Message : {{message}} </p>

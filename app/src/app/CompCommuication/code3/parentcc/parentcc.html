@@ -1,0 +1,11 @@
+
+<h1>User-Parent-child</h1>
+<p>parentcc works!</p>
+<app-childcc
+*ngFor="let u of userdata"
+[name]="u.name"
+[productname]="u.productname"
+[price]="u.price"
+[quantity]="u.quantity"
+></app-childcc>
+<hr>

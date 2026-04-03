@@ -1,0 +1,7 @@
+<p>h1plist works!</p>
+<div *ngFor="let p of filterProduct">
+  {{p.name}}-{{p.price}}
+  <button (click)="addTocart(p)">Click</button>
+</div>
+<hr>
+<app-h1pcart [cartitems]="cart"></app-h1pcart>

@@ -1,0 +1,28 @@
+.plst{
+  background-color: aqua;
+  text-align: center;
+  width: 100%;
+}
+.container{
+  display: flex;
+  gap:20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.div1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  width:220px;
+  height:200px;
+  background-color: violet;
+}
+
+.btn{
+  color: white;
+  background-color: grey;
+}
+.btn:hover{
+  background-color: black;
+}

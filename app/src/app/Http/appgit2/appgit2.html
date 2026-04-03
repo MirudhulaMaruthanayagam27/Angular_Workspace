@@ -1,0 +1,9 @@
+<h2>GitHub Repositories</h2>
+<input [(ngModel)]="username" placeholder="Enter GitHub username">
+<button (click)="fetchRepos()">Get Repos</button>
+
+<p *ngIf="loading">Loading...</p>
+
+<ul>
+  <li *ngFor="let repo of repos">{{ repo.name }} - {{ repo.description || '' }}</li>
+</ul>

@@ -1,0 +1,9 @@
+<p>msgif works!</p>
+<div *ngIf="messages.length > 0 ; else nomsg">
+  <ul>
+  <li *ngFor="let msg of messages">{{msg}}</li>
+  </ul>
+</div>
+<ng-template #nomsg>
+  <p>No msg</p>
+</ng-template>

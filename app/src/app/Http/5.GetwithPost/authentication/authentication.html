@@ -1,0 +1,30 @@
+<h1>Get with Post-Localstorage</h1>
+
+<div class="box">
+
+  <h2>{{ isLogin ? 'Login' : 'Signup' }}</h2>
+
+  <!--signup-->
+  <div *ngIf="!isLogin">
+    <input [(ngModel)]="user.name" placeholder="Username"><br>
+  </div>
+
+  <input [(ngModel)]="user.email" placeholder="Email"><br>
+  <input [(ngModel)]="user.password" type="password" placeholder="Password"><br>
+
+  <!--login-->
+  <div *ngIf="!isLogin">
+    <input [(ngModel)]="confirmpassword" type="password" placeholder="Confirm Password"><br>
+  </div>
+
+  <button (click)="isLogin ? login() : signup()">
+    {{ isLogin ? 'Login' : 'Signup' }}
+  </button>
+
+  <p (click)="toggle()" class="link">
+    {{ isLogin ? 'New user? Signup' : 'Already user? Login' }}
+  </p>
+
+  <p>{{ message }}</p>
+
+</div>
